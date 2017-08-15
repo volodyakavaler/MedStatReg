@@ -1,0 +1,139 @@
+ru:
+  app:
+    name: Базовое приложение
+    company:
+      short_name: МПУ
+      department: Кафедра
+  helpers:
+    submit:
+      create: Сохранить
+      submit: Сохранить
+      update: Сохранить
+  buttons:
+    edit: Редактировать
+    destroy: Удалить
+    show: Показать
+    confirm:
+      user: Действительно удалить пользователя?
+      role: Действительно удалить роль?
+      driver: Действительно удалить водителя?
+      automobile: Действительно удалить автомобиль?
+      order: Действительно удалить заказ?
+      tariff: Действительно удалить тариф?
+    new:
+      user: Новый пользователь
+      role: Новая роль
+      driver: Новый водитель
+      automobile: Новый автомобиль
+      order: Новый заказ
+      tariff: Новый тариф
+    search:
+      order: Найти заказы
+  headers:
+    users:
+      edit: Редактирование пользователя
+      new: Новый пользователь
+      index: Список пользователей
+    roles:
+      index: Список возможных ролей пользователей
+      edit: Редактирование роли
+      new: Новая роль
+    automobiles:
+      index: Список автомобилей
+      new: Новый автомобиль
+      edit: Редактирование автомобиля
+      new: Создание автомобиля
+    drivers:
+      index: Список водителей
+      new: Новый водитель
+      edit: Редактирование водителя
+      new: Создание водителя
+    tariffs:
+      index: Список тарифов
+      new: Новый тариф
+      edit: Редактирование тарифа
+      new: Создание тарифа
+    orders:
+      index: Список заказов
+      new: Новый заказ
+      edit: Редактирование заказа
+      new: Создание заказа
+      search: Поиск заказов
+  forms:
+    order_search:
+      form:
+        order: По атрибутам заказа
+        tariff: По атрибутам тарифа
+        automobile: По атрибутам автомобиля
+        driver: По атрибутам водителя
+      from: от
+      to: до
+      found: Найдено
+  views:
+    pagination:
+      first: ⇤
+      last: ⇥
+      previous: ←
+      next: →
+      truncate: …
+  activerecord:
+    models:
+      user: Пользователь
+      automobile: Автомобиль
+      driver: Водитель
+      tariff: Тариф
+      order: Заказ
+    attributes:
+      user:
+        email: Пользовательское имя/электронная почта
+        birthday: Дата рождения
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        reset_password_email_sent_at: Дата отправления письма для смены пароля
+        activation_state: Статус активации
+        activation_token_expires_at: Дата прекращения действия токена активации
+        last_login_at: Время последнего входа в систему
+        role_users: Роли
+      role:
+        name: Обозначение
+        info: Краткое название
+        full_info: Описание
+      # nested_start
+      role_user: &role_users
+      # nested_finish
+        role: Роль
+        role_id: Роль
+        data: Параметры
+      # nested_start
+      user/role_users:
+        <<: *role_users
+      # nested_finish
+      automobile:
+        automobile_model: Модель
+        automobile_type: Тип
+        state_number: Госномер
+        color: Цвет
+        release: Год выпуска
+      driver:
+        last_name: Фамилия
+        first_name: Имя
+        patronymic: Отчество
+        date_of_birth: Дата рождения
+        itn: ИНН
+        passport: Серия и номер паспорта
+        automobile_id: Автомобиль
+      tariff:
+        name: Название
+        time_of_day: Время суток
+        range: Дальности поездки с точки зрения удалённости от центра Москвы
+        price_per_kilometer: Цена за километр пути
+      order:
+        id: №
+        date_of_travel: Дата подачи такси
+        time_of_travel: Время подачи такси
+        departure_address: Адрес подачи такси
+        arrival_address: Адрес прибытия
+        number_of_passengers: Количество пассажиров
+        length_of_route: Длина маршрута
+        automobile_id: Автомобиль
+        tariff_id: Тариф
